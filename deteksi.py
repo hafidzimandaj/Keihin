@@ -2,7 +2,7 @@ import cv2
 from matplotlib import pyplot as plt
 
 # Baca gambar
-img = cv2.imread('detect.jpg')
+img = cv2.imread('KEIHIN/deteksi/detect.jpg')
 
 # Tentukan range warna merah pada HSV
 lower_red = (130.0, 62.0, 0, 0)
@@ -33,7 +33,7 @@ for cnt in contours:
     (x, y, w, h) = cv2.boundingRect(cnt)
 
     # Gambar kotak pada gambar
-    img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 255), 2)
+    img = cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
     cv2.putText(img, "({}, {}, {}, {})".format(h/1000, w/1000, x/1000, y/1000), (x, y),
                 cv2.FONT_HERSHEY_COMPLEX, 1.0, (255, 0, 255))
 
